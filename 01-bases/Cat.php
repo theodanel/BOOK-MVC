@@ -6,6 +6,16 @@ class Cat
     public $type;
     private $fur;
 
+    public function __construct($name = 'Garfield', $type = 'Chat de gouttière')
+    {
+        $this->name = $name;
+        $this->type = $type;
+        $this->fur = 'blanc';
+    }
+
+    /**
+     * Un setter.
+     */
     public function setFur($fur)
     {
         $this->fur = strtolower($fur);
@@ -13,6 +23,9 @@ class Cat
         return $this;
     }
 
+    /**
+     * Un getter.
+     */
     public function getFur()
     {
         return $this->fur;

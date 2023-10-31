@@ -20,8 +20,8 @@
         echo $bianca->cry().'<br>';
         echo 'Mon chat est '.$bianca->getFur().'<br>';
 
-        $mina = new Cat();
-        $mina->name = 'Mina';
+        $mina = new Cat('Mina', 'Chartreux');
+        //$mina->name = 'Mina';
         echo $mina->cry().'<br>';
 
         var_dump($bianca, $mina);
