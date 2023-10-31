@@ -25,6 +25,24 @@
         echo $mina->cry().'<br>';
 
         var_dump($bianca, $mina);
+
+        // Exercice Car
+        require 'Car.php';
+
+        $car1 = new Car('BMW', 'Serie 1');
+        echo $car1->drive().'<br>';
+        echo $car1->klaxon().'<br>';
+        var_dump($car1);
+        $car1->repaint('Jaune');
+        var_dump($car1);
+
+        $car2 = new Car('Ferrari', '360 Modena', 'Rouge');
+        echo $car2->drive().'<br>';
+        echo $car2->klaxon().'<br>';
+        while ($car2->hasFuel()) {
+            echo $car2->drive().'<br>';
+        }
+        var_dump($car2);
     ?>
 </body>
 </html>
