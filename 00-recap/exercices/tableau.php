@@ -47,3 +47,52 @@ foreach ($cars as $car) {
 
 // Comment afficher Toit ouvrant ?
 $cars[0]['options'][1];
+
+// Exercice capitales
+$capitales = [
+    'France' => 'Paris',
+    'Espagne' => 'Madrid',
+    'Italie' => 'Rome',
+];
+
+foreach ($capitales as $country => $capital) {
+    echo "La capitale de $country est $capital. <br>";
+}
+
+// Exercice population
+$population = [
+    'France' => 67595000,
+    'Suede' => 9998000,
+    'Suisse' => 8417000,
+    'Kosovo' => 1820631,
+    'Malte' => 434403,
+    'Mexique' => 122273500,
+    'Allemagne' => 82800000,
+];
+
+// 1
+echo 'Les pays ayant + de 20M de personnes : <br>';
+foreach ($population as $country => $pop) {
+    if ($pop > 20 * 10 ** 6) {
+        echo $country . '<br>';
+    }
+}
+
+$population = [
+    'France' => 67595000,
+    'Suede' => 9998000,
+    'Suisse' => 8417000,
+    'Kosovo' => 1820631,
+    'Malte' => 434403,
+    'Mexique' => 122273500,
+    'Allemagne' => 82800000,
+];
+
+// 2
+$total = 0;
+foreach ($population as $country => $pop) {
+    if ($country != 'Mexique') {
+        $total += $pop;
+    }
+}
+echo 'La population totale est '.$total;
