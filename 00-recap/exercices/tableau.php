@@ -95,4 +95,60 @@ foreach ($population as $country => $pop) {
         $total += $pop;
     }
 }
-echo 'La population totale est '.$total;
+echo 'La population totale est '.$total.'<br>';
+
+// Exercices élèves
+$eleves = [
+    0 => [
+        'nom' => 'Matthieu',
+        'notes' => [10, 8, 16, 20, 17, 16, 15, 2]
+    ],
+    1 => [
+        'nom' => 'Thomas',
+        'notes' => [4, 18, 12, 15, 13, 7]
+    ],
+    2 => [
+        'nom' => 'Jean',
+        'notes' => [17, 14, 6, 2, 16, 18, 9]
+    ],
+    3 => [
+        'nom' => 'Enzo',
+        'notes' => [1, 14, 6, 2, 1, 8, 9]
+    ]
+];
+
+// 1/ Afficher la liste de tous les éléves avec leurs notes.
+foreach ($eleves as $eleve) {
+    echo $eleve['nom'].' a eu ';
+
+    foreach ($eleve['notes'] as $index => $note) {
+        echo $note;
+
+        if ($index < count($eleve['notes']) - 2) { // "," partout sauf le dernier et avant dernier
+            echo ', ';
+        } else if ($index < count($eleve['notes']) - 1) { // "et" sur le dernier
+            echo ' et ';
+        }
+    }
+
+    echo '<br>';
+}
+
+// 2/ Calculer la moyenne de Jean. On part de $eleves[2]['notes']
+$sum = 0;
+foreach ($eleves[2]['notes'] as $note) {
+    $sum += $note;
+}
+$average = $sum / count($eleves[2]['notes']);
+echo 'La moyenne de Jean est '.round($average, 2).'<br>';
+
+$average = array_sum($eleves[2]['notes']) / count($eleves[2]['notes']);
+echo 'La moyenne de Jean est '.round($average, 2).'<br>';
+
+// 3/ Combien d'élèves ont la moyenne ?
+
+
+// 4/ Quel(s) éléve(s) a(ont) la meilleure note ?
+
+
+// 5/ Qui a eu au moins un 20 ?
