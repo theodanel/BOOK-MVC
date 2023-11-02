@@ -56,7 +56,7 @@
                 </div>
 
                 <p class="text-xl text-center text-gray-900">
-                    ISBN: <strong>8-248827-583739</strong>
+                    ISBN: <strong><?= isbn($isbn); ?></strong>
                 </p>
 
                 <div class="text-center mt-12">
