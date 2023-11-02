@@ -16,7 +16,7 @@ $books2['b'];
 
 // Comment on peut parcourir le tableau $books2 ? foreach, while, for
 foreach ($books2 as $index => $book) {
-    echo $book.'-'.$index; // 1-a
+    echo $book.'-'.$index.'<br>'; // 1-a
 }
 
 // Tableau à 3 dimensions
@@ -35,9 +35,15 @@ $cars = [
     ],
 ];
 
+foreach ($cars as $car) {
+    echo $car['brand'].' '.$car['model'].'<br>';
+    echo 'Sa couleur est '.$car['color'].'<br>';
+    echo count($car['options']).' options <br>';
+    foreach ($car['options'] as $option) {
+        echo '- '.$option.'<br>';
+    }
+    echo '------------------ <br>';
+}
+
 // Comment afficher Toit ouvrant ?
 $cars[0]['options'][1];
-
-foreach ($cars as $car) {
-    
-}
