@@ -3,9 +3,11 @@
 
     // Récupérer l'id du livre sur livre.php?id=1
     $id = $_GET['id'] ?? null;
+    $bookFound = false;
 
     foreach ($books as $book) {
         if ($book['id'] == $id) {
+            $bookFound = true;
             $title = $book['title'];
             $price = $book['price'];
             $discount = $book['discount'];
@@ -14,6 +16,12 @@
             $publishedAt = $book['published_at'];
             $image = $book['image'];
         }
+    }
+
+    if (!$bookFound) {
+        http_response_code(404);
+        require '404.php';
+        die(); // Arrête le code
     }
 ?>
 
