@@ -2,6 +2,10 @@
     require 'data.php';
     $title = 'Nos livres'; // Le titre dans l'onglet du navigateur (Pour le SEO)
 
+    // Récupérer les livres dans la BDD
+    require 'config/database.php';
+    $books = $db->query('SELECT * FROM books')->fetchAll();
+
     // Est-ce qu'une recherche a eu lieu ?
     $search = $_GET['search'] ?? '';
 

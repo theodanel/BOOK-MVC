@@ -3,6 +3,7 @@
 
     // Récupérer l'id du livre sur livre.php?id=1
     $id = $_GET['id'] ?? null;
+    // @todo Utiliser la BDD
     $bookFound = false;
 
     foreach ($books as $book) {

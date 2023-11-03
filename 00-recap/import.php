@@ -14,7 +14,7 @@ $query = $db->prepare('INSERT INTO books (
     title, price, discount, isbn, author, published_at, image
 ) VALUES (?, ?, ?, ?, ?, ?, ?)');
 
-// Boucles sur les livres
+// Parcourir les livres et insérer dans la bdd
 foreach ($books as $book) {
     $query->execute([
         $book['title'],
