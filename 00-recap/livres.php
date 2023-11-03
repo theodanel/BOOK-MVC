@@ -1,6 +1,9 @@
 <?php
     require 'data.php';
     $title = 'Nos livres'; // Le titre dans l'onglet du navigateur (Pour le SEO)
+
+    // Est-ce qu'une recherche a eu lieu ?
+    $search = $_GET['search'] ?? null;
 ?>
 
 <?php require 'partials/header.php'; ?>
@@ -11,6 +14,13 @@
                 Créer un livre
             </a>
         </div>
+
+        <?php if ($search) { ?>
+        <div class="mb-6 text-center text-2xl">
+            Vous avez cherché "<?= $search; ?>".
+            Nous avons <?= count($books); ?> résultats.
+        </div>
+        <?php } ?>
 
         <form action="">
             <div class="flex justify-between items-center mb-8">
