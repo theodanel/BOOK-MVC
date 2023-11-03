@@ -28,7 +28,7 @@
 
     <div class="max-w-5xl mx-auto px-3">
         <div class="text-center mb-8">
-            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="/book/new">
+            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="ajout.php">
                 Créer un livre
             </a>
         </div>
