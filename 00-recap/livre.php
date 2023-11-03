@@ -1,5 +1,20 @@
 <?php
     require 'data.php';
+
+    // Récupérer l'id du livre sur livre.php?id=1
+    $id = $_GET['id'] ?? null;
+
+    foreach ($books as $book) {
+        if ($book['id'] == $id) {
+            $title = $book['title'];
+            $price = $book['price'];
+            $discount = $book['discount'];
+            $isbn = $book['isbn'];
+            $author = $book['author'];
+            $publishedAt = $book['published_at'];
+            $image = $book['image'];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
