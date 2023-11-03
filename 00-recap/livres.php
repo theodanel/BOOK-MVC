@@ -3,7 +3,21 @@
     $title = 'Nos livres'; // Le titre dans l'onglet du navigateur (Pour le SEO)
 
     // Est-ce qu'une recherche a eu lieu ?
-    $search = $_GET['search'] ?? null;
+    $search = $_GET['search'] ?? '';
+
+    // On va filtrer le tableau $books
+    $newBooks = [];
+
+    foreach ($books as $book) {
+        // Quam toto => Toto
+        if (str_contains(strtolower($book['title']), strtolower($search)) ||
+            str_contains(strtolower($book['author']), strtolower($search))) {
+            $newBooks[] = $book;
+            // array_push($newBooks, $book);
+        }
+    }
+
+    $books = $newBooks;
 ?>
 
 <?php require 'partials/header.php'; ?>
