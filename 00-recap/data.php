@@ -2,14 +2,14 @@
 
 $books = [
     [
-        'id' => 1,
-        'title' => 'Quae dolor itaque natus reiciendis ad quae.',
-        'price' => 38,
-        'discount' => 19,
-        'isbn' => '8248827583739',
-        'author' => 'Denise-Sabine Bernard',
-        'published_at' => '2014-08-18',
-        'image' => 'uploads/06.jpg',
+        'id' => 1, // INT Primary
+        'title' => 'Quae dolor itaque natus reiciendis ad quae.', // VARCHAR
+        'price' => 38, // INT
+        'discount' => 19, // INT
+        'isbn' => '8248827583739', // VARCHAR
+        'author' => 'Denise-Sabine Bernard', // VARCHAR
+        'published_at' => '2014-08-18', // DATE
+        'image' => 'uploads/06.jpg', // VARCHAR
     ],
     [
         'id' => 2,
