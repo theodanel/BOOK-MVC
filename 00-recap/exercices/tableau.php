@@ -101,7 +101,7 @@ echo 'La population totale est '.$total.'<br>';
 $eleves = [
     0 => [
         'nom' => 'Matthieu',
-        'notes' => [10, 8, 16, 20, 17, 16, 15, 2]
+        'notes' => [10, 8, 16, 2, 17, 16, 15, 2]
     ],
     1 => [
         'nom' => 'Thomas',
@@ -146,9 +146,50 @@ $average = array_sum($eleves[2]['notes']) / count($eleves[2]['notes']);
 echo 'La moyenne de Jean est '.round($average, 2).'<br>';
 
 // 3/ Combien d'élèves ont la moyenne ?
+$total = 0;
+foreach ($eleves as $eleve) {
+    $average = array_sum($eleve['notes']) / count($eleve['notes']);
 
+    if ($average > 10) {
+        $total++; // $total = $total + 1;
+        echo $eleve['nom'].' a la moyenne <br>';
+    } else {
+        echo $eleve['nom'].' n\'a pas la moyenne <br>';
+    }
+}
+echo "Nombre d'élèves avec la moyenne: $total <br>";
 
 // 4/ Quel(s) éléve(s) a(ont) la meilleure note ?
+$max = 0;
+foreach ($eleves as $eleve) {
+    foreach ($eleve['notes'] as $note) {
+        if ($note > $max) {
+            $max = $note;
+        }
+    }
+}
+
+foreach ($eleves as $eleve) {
+    // Est-ce que la note max est dans les notes de l'élève ?
+    if (in_array($max, $eleve['notes'])) {
+        echo $eleve['nom'].' a la meilleure note: '.$max.' <br>';
+    }
+}
 
 
 // 5/ Qui a eu au moins un 20 ?
+$hasTwenty = false;
+foreach ($eleves as $eleve) {
+    foreach ($eleve['notes'] as $note) {
+        if ($note == 20) {
+            $hasTwenty = true;
+            break 2; // On arrête les 2 foreach
+        }
+    }
+}
+
+if ($hasTwenty) {
+    echo "Quelqu'un a eu 20";
+} else {
+    echo "Personne n'a eu 20";
+}
