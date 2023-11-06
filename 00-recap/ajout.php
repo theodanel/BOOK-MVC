@@ -1,4 +1,7 @@
 <?php
+require 'config/database.php';
+require 'data.php';
+
 $title = 'Ajouter un livre'; // Titre de la page
 
 // Récupérer les données
@@ -41,7 +44,23 @@ if (!empty($_POST)) {
     }
 
     if (empty($errors)) {
-        // @todo Faire un insert, redirection, message session ?
+        // @todo Upload
+        insert('INSERT INTO books (title, price, discount, isbn, author, published_at, image)
+                VALUES (?, ?, ?, ?, ?, ?, ?)', [
+            htmlspecialchars($btitle),
+            $price,
+            empty($discount) ? 0 : $discount,
+            $isbn,
+            htmlspecialchars($author),
+            $publishedAt,
+            'uploads/06.jpg',
+        ]);
+
+        // Message dans la session
+        addMessage('Votre livre a été ajouté!');
+
+        // Redirection
+        redirect('livres.php');
     }
 }
 

@@ -27,6 +27,10 @@
 <?php require 'partials/header.php'; ?>
 
     <div class="max-w-5xl mx-auto px-3">
+        <?php if ($message = getMessage()) { ?>
+            <p><?= $message; ?></p>
+        <?php } ?>
+
         <div class="text-center mb-8">
             <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="ajout.php">
                 Créer un livre

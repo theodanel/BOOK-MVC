@@ -140,3 +140,31 @@ function isbn($numbers) {
 
     return $result;
 }
+
+function insert($sql, $params) {
+    global $db;
+
+    $query = $db->prepare($sql);
+
+    return $query->execute($params);
+}
+
+function redirect($url) {
+    header('Location: '.$url);
+}
+
+session_start(); // Pour pouvoir utiliser les sessions
+
+/**
+ * Permet d'ajouter un message en session
+ */
+function addMessage($message) {
+    $_SESSION['message'] = $message;
+}
+
+function getMessage() {
+    $message = $_SESSION['message'] ?? null;
+    unset($_SESSION['message']);
+
+    return $message;
+}
