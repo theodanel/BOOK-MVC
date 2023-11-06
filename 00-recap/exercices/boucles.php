@@ -41,6 +41,7 @@ echo '<h1>FizzBuzz</h1>';
 
 // 1 & 1 => 01 et 01 donc 01
 // 2 & 1 => 10 et 01 donc 00
+// 3 & 1 => 11 et 01 donc 01
 // 4 & 1 => 100 et 01 donc 00
 // 5 & 1 => 101 et 01 donc 01
 
@@ -54,16 +55,6 @@ for ($i = 1; $i <= 100; $i++) {
     } else {
         echo $i . ' ___ ';
     }
-}
-
-echo '<br>';
-
-for ($i = 1; $i <= 100; $i++) {
-    $fizz = $i % 3 == 0 ? 'Fizz' : '';
-    $buzz = $i % 5 == 0 ? 'Buzz' : '';
-    $fizzBuzz = !$fizz && !$buzz ? $i : '';
-
-    echo $fizz.$buzz.$fizzBuzz.' ___';
 }
 
 echo '<br>';
