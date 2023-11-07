@@ -64,6 +64,11 @@
 
         require 'Calculator.php';
         echo '<h1>Exercice Calculator</h1>';
+
+        $c = new Calculator();
+        $c->add(10)->substract(4);
+        $c->multiply(2)->divide(4);
+        echo $c->result(); // 3
     ?>
 </body>
 </html>
