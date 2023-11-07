@@ -27,6 +27,7 @@
         var_dump($bianca, $mina);
 
         // Exercice Car
+        echo '<h1>Exercice Car</h1>';
         require 'Car.php';
 
         $car1 = new Car('BMW', 'Serie 1');
@@ -43,6 +44,16 @@
             echo $car2->drive().'<br>';
         }
         var_dump($car2);
+
+        require 'Rectangle.php';
+        echo '<h1>Exercice Rectangle</h1>';
+
+        $r = new Rectangle(10, 20);
+        echo $r->perimeter().'<br>'; // 60
+        echo $r->area().'<br>'; // 200
+        var_dump($r->isValid()); // true
+        $r2 = new Rectangle(-10, 20);
+        var_dump($r2->isValid()); // false
     ?>
 </body>
 </html>
