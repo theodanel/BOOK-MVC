@@ -39,7 +39,17 @@
     <table>
         <tr>
             <th class="legend-bottom legend-right bg-light">x</th>
-            <?php for ($i = 0; $i <= 10; $i++) { ?>
+            <?php for ($i = 0; $i <= 10; $i++) {
+                /*
+                if (true) {
+                    echo 'A';
+                } else {
+                    echo 'B';
+                }
+
+                echo true ? 'A' : 'B'; // Opérateur ternaire
+                */
+                ?>
                 <th class="legend-bottom <?= $i % 2 ? 'bg-light' : ''; ?>"><?= $i; ?></th>
             <?php } ?>
         </tr>
