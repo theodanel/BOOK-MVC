@@ -38,14 +38,14 @@
 
     <table>
         <tr>
-            <th class="legend-bottom legend-right">x</th>
+            <th class="legend-bottom legend-right bg-light">x</th>
             <?php for ($i = 0; $i <= 10; $i++) { ?>
-                <th class="legend-bottom"><?= $i; ?></th>
+                <th class="legend-bottom <?= $i % 2 ? 'bg-light' : ''; ?>"><?= $i; ?></th>
             <?php } ?>
         </tr>
         <?php for ($row = 0; $row <= 10; $row++) { ?>
             <tr>
-                <th class="legend-right"><?= $row; ?></th>
+                <th class="legend-right <?= $row % 2 ? 'bg-light' : ''; ?>"><?= $row; ?></th>
                 <?php for ($col = 0; $col <= 10; $col++) {
                     // Ici je fais la logique pour avoir la bonne classe en fonction du nombre
                     $class = '';
