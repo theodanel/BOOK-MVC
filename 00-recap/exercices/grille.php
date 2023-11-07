@@ -23,6 +23,14 @@
         .legend-bottom {
             border-bottom: 1px solid #000;
         }
+
+        .bg-dark {
+            background-color: red;
+        }
+
+        .bg-light {
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
@@ -38,8 +46,17 @@
         <?php for ($row = 0; $row <= 10; $row++) { ?>
             <tr>
                 <th class="legend-right"><?= $row; ?></th>
-                <?php for ($col = 0; $col <= 10; $col++) { ?>
-                    <td><?= $row * $col; ?></td>
+                <?php for ($col = 0; $col <= 10; $col++) {
+                    // Ici je fais la logique pour avoir la bonne classe en fonction du nombre
+                    $class = '';
+
+                    if ($row == $col) {
+                        $class = 'bg-dark';
+                    } else if ($row % 2 == $col % 2) { // Si on est sur 2 valeurs paires ou 2 valeurs impaires
+                        $class = 'bg-light';
+                    }
+                ?>
+                    <td class="<?= $class; ?>"><?= $row * $col; ?></td>
                 <?php } ?>
             </tr>
         <?php } ?>
