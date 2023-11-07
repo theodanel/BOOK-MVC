@@ -48,12 +48,22 @@
         require 'Rectangle.php';
         echo '<h1>Exercice Rectangle</h1>';
 
-        $r = new Rectangle(10, 20);
-        echo $r->perimeter().'<br>'; // 60
-        echo $r->area().'<br>'; // 200
-        var_dump($r->isValid()); // true
+        $rectangle = new Rectangle(10, 20);
+        echo $rectangle->perimeter().'<br>'; // 60
+        echo $rectangle->area().'<br>'; // 200
+        var_dump($rectangle->isValid()); // true
         $r2 = new Rectangle(-10, 20);
         var_dump($r2->isValid()); // false
+
+        require 'Square.php';
+        echo '<h1>Exercice Carré</h1>';
+
+        $square = new Square(10);
+        echo $square->perimeter(); // 40
+        var_dump($square->isBiggerThan($rectangle)); // false et utilisable sur les carrés ou rectangles
+
+        require 'Calculator.php';
+        echo '<h1>Exercice Calculator</h1>';
     ?>
 </body>
 </html>
