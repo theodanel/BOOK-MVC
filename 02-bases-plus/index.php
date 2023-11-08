@@ -53,6 +53,7 @@ $l->addBooks([ // Ajoute les livres suivant dans un tableau
 
 <h3>Nos livres représentent un total de <?= $l->totalPages(); ?> pages.</h3>
 
+<!-- @todo à corriger -->
 <h3>On cherche le livre : Coupe de feu</h3>
 <p></p>
 
@@ -61,3 +62,13 @@ $l->addBooks([ // Ajoute les livres suivant dans un tableau
 
 <h3>On cherche un livre aléatoire</h3>
 <p></p>
+
+<h1>Exercice chaînage</h1>
+
+<?php
+require 'Text.php';
+$text = new Text();
+$text->set('Hello world')->bold()->print(); // <strong>Hello world</strong>
+$text->set('Good bye world')->italic()->print(); // <em>Hello world</em>
+$text->set('Hello toto')->strike()->print(); // <del>Hello world</del>
+$text->set('Hello titi')->bold()->italic()->strike()->print(); // <strong><em><del>Hello world</del></em></strong>
