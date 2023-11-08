@@ -18,3 +18,17 @@ $fiorella->becomeFriend($toto); ?>
     <?php } ?>
 </ul>
 
+<h1>Exercice Librairie</h1>
+
+<?php
+
+require 'Book.php';
+
+$b = new Book('Harry Potter à l\'école des sorciers', 2);
+echo 'On est sur la page '.$b->page().' <br>'; // 1
+$b->nextPage()->nextPage()->nextPage(); // tourne la page (ne fait rien si on est sur la dernière page)
+echo 'On est sur la page '.$b->page().' <br>'; // 2
+$b->close(); // ferme le livre (reviens à la page 1)
+echo 'On est sur la page '.$b->page().' <br>';
+echo 'Le livre est '.$b->getName().'. '; // Récupère le nom du livre
+echo 'Il a '.$b->countPages().' pages. <br>'; // Récupère le nombre de pages
