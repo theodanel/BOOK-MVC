@@ -32,3 +32,32 @@ $b->close(); // ferme le livre (reviens à la page 1)
 echo 'On est sur la page '.$b->page().' <br>';
 echo 'Le livre est '.$b->getName().'. '; // Récupère le nom du livre
 echo 'Il a '.$b->countPages().' pages. <br>'; // Récupère le nombre de pages
+
+require 'Library.php';
+
+$l = new Library();
+$l->addBook($b); // Ajoute le livre b dans un tableau
+$l->addBooks([ // Ajoute les livres suivant dans un tableau
+    new Book('Chambre des secrets', 300),
+    new Book('Prisonnier d\'Azkaban', 400),
+    new Book('Coupe de feu', 500),
+]);
+?>
+
+<h2>Notre bibliothèque contient <?= $l->count(); ?> livres :</h2>
+<ul>
+    <?php foreach ($l->books() as $book) { ?>
+        <li><?= $book->getName(); ?></li>
+    <?php } ?>
+</ul>
+
+<h3>Nos livres représentent un total de <?= $l->totalPages(); ?> pages.</h3>
+
+<h3>On cherche le livre : Coupe de feu</h3>
+<p></p>
+
+<h3>On cherche les livres commençant par C</h3>
+<p></p>
+
+<h3>On cherche un livre aléatoire</h3>
+<p></p>
