@@ -1,6 +1,6 @@
 <?php
 
-class Character
+abstract class Character
 {
     protected $name;
     protected $strength = 10;
