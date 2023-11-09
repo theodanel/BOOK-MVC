@@ -1,0 +1,18 @@
+{
+    "name": "m2i/composer",
+    "autoload": {
+        "psr-4": {
+            "M2i\\Composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Matthieu Mota",
+            "email": "matthieumota@gmail.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.15",
+        "symfony/var-dumper": "^6.3"
+    }
+}
