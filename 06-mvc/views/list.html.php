@@ -13,5 +13,11 @@
             <li><?= $car; ?></li>
         <?php } ?>
     </ul>
+
+    <ul>
+        <?php foreach ($users as $user) { ?>
+            <li><?= $user['name']; ?></li>
+        <?php } ?>
+    </ul>
 </body>
 </html>

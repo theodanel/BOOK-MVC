@@ -2,6 +2,7 @@
 
 namespace M2i\Mvc\Controller;
 
+use M2i\Mvc\Model\User;
 use M2i\Mvc\View;
 
 class UserController
@@ -10,9 +11,12 @@ class UserController
     {
         $name = 'Fiorella';
 
+        $users = User::all();
+        
         return View::render('list', [
             'name' => $name,
             'cars' => [1, 2, 3],
+            'users' => $users,
         ]);
     }
 }
