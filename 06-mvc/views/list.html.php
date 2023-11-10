@@ -7,5 +7,11 @@
 </head>
 <body>
     <h1>Hello <?= $name; ?> !</h1>
+
+    <ul>
+        <?php foreach ($cars as $car) { ?>
+            <li><?= $car; ?></li>
+        <?php } ?>
+    </ul>
 </body>
 </html>
