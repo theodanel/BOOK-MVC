@@ -10,6 +10,7 @@ $app = new App();
 
 // Toutes les routes du site
 $app->addRoutes([
+    ['GET', '/', 'HomeController@index'],
     ['GET', '/utilisateurs', 'UserController@list'],
     ['GET', '/films', 'MovieController@list'],
 ]);
