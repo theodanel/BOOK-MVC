@@ -16,7 +16,7 @@ php -S 127.0.0.1:8000 -t public
 
 On pourra maintenant aller sur `http://localhost:8000`.
 
-## Les contrôleurs
+## Les contrôleurs
 
 Les contrôleurs sont rangés dans `src/Controller`. Un contrôleur sert à ranger son code PHP (uniquement le PHP). Une page = Une méthode dans un contrôleur.
 
