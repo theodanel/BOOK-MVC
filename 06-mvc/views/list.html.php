@@ -10,6 +10,7 @@
         </ul>
 
         <h2 class="text-xl font-bold my-4">CRUD MVC</h2>
+        <a href="/utilisateurs/creer" class="text-blue-400 underline">Créer</a>
         <div class="grid grid-cols-4 gap-3">
             <?php foreach ($users as $user) { ?>
                 <a href="/utilisateurs/<?= $user['id']; ?>">

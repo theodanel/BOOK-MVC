@@ -13,6 +13,7 @@ $app->addRoutes([
     ['GET', '/', 'HomeController@index'],
     ['GET', '/utilisateurs', 'UserController@list'],
     ['GET', '/utilisateurs/[i:id]', 'UserController@show'],
+    ['GET|POST', '/utilisateurs/creer', 'UserController@create'],
     ['GET', '/films', 'MovieController@list'],
 ]);
 

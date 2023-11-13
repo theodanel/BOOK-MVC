@@ -33,4 +33,31 @@ class UserController
             'user' => $user,
         ]);
     }
+
+    public function create()
+    {
+        // Récup les données
+        $user = new User();
+        $user->name = $_POST['name'] ?? null;
+        $errors = [];
+
+        if (! empty($_POST)) {
+            if (empty($user->name)) {
+                $errors['name'] = 'Le nom est invalide.';
+            }
+
+            if (empty($errors)) {
+                // Dans le save, on met le nom des
+                // colonnes de la table
+                $user->save(['name']);
+
+                // View::redirect('/utilisateurs');
+            }
+        }
+
+        return View::render('create', [
+            'errors' => $errors,
+            'user' => $user,
+        ]);
+    }
 }

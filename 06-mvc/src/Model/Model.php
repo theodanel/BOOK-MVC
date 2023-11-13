@@ -32,4 +32,24 @@ class Model
 
         return $query->fetch();
     }
+
+    public function save($fields)
+    {
+        $table = static::getTable();
+
+        $columns = implode(', ', $fields); // ['name', 'age'] => name, age
+        $values = [];
+
+        foreach ($fields as $field) {
+            $values[':'.$field] = $this->$field;
+        }
+
+        // [':name' => 'Fiorella', ':age' => 3]
+        $parameters = implode(', ', array_keys($values)); // [':name', ':age']
+
+        $sql = "INSERT INTO $table ($columns) VALUES ($parameters)";
+        $query = Database::get()->prepare($sql);
+
+        return $query->execute($values);
+    }
 }
