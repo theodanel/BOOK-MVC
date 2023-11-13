@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC</title>
-</head>
-<body>
+<?php require 'partials/header.html.php'; ?>
     <h1>Hello <?= $name; ?> !</h1>
 
     <ul>
@@ -19,5 +12,4 @@
             <li><?= $user['name']; ?></li>
         <?php } ?>
     </ul>
-</body>
-</html>
+<?php require 'partials/footer.html.php'; ?>
