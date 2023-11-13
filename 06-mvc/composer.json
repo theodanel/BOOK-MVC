@@ -13,6 +13,7 @@
     ],
     "require": {
         "symfony/var-dumper": "^6.3",
-        "filp/whoops": "^2.15"
+        "filp/whoops": "^2.15",
+        "altorouter/altorouter": "^2.0"
     }
 }

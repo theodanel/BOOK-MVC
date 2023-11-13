@@ -2,16 +2,17 @@
 
 require '../vendor/autoload.php';
 
-use M2i\Mvc\Controller\MovieController;
-use M2i\Mvc\Controller\UserController;
+use M2i\Mvc\App;
 
-// Permet de styliser les erreurs
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
+$app = new App();
+// Ligne utile que si on ne fait pas "php -S ..."
+// $app->setBasePath('/poo/06-mvc/public/');
 
-// $controller = new UserController();
-// echo $controller->list();
+// Toutes les routes du site
+$app->addRoutes([
+    ['GET', '/utilisateurs', 'UserController@list'],
+    ['GET', '/films', 'MovieController@list'],
+]);
 
-$controller = new MovieController();
-echo $controller->list();
+// Lancer l'application
+$app->run();
