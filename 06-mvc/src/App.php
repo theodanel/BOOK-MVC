@@ -21,7 +21,7 @@ class App extends AltoRouter
             [$controller, $method] = explode('@', $match['target']); // UserController@list
             $controller = 'M2i\Mvc\Controller\\'.$controller;
             $object = new $controller();
-            $object->$method();
+            $object->$method(...$match['params']);
         } else {
             http_response_code(404);
             View::render('404');

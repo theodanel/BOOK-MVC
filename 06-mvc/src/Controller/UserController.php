@@ -19,4 +19,13 @@ class UserController
             'users' => $users,
         ]);
     }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        return View::render('show', [
+            'user' => $user,
+        ]);
+    }
 }

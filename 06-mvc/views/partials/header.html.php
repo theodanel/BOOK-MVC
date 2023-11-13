@@ -11,11 +11,11 @@
         <div class="max-w-5xl mx-auto px-3">
             <div class="flex justify-between items-center text-gray-200">
                 <h1 class="text-2xl">
-                    <a href="./">MVC</a>
+                    <a href="/">MVC</a>
                 </h1>
                 <nav class="space-x-3">
-                    <a href="./utilisateurs">Utilisateurs</a>
-                    <a href="./films">Films</a>
+                    <a href="/utilisateurs">Utilisateurs</a>
+                    <a href="/films">Films</a>
                 </nav>
             </div>
         </div>
