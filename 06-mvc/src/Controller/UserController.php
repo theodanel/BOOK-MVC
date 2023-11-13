@@ -24,6 +24,11 @@ class UserController
     {
         $user = User::find($id);
 
+        if (! $user) {
+            http_response_code(404);
+            return View::render('404');
+        }
+
         return View::render('show', [
             'user' => $user,
         ]);
