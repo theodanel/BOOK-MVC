@@ -1,15 +1,21 @@
 <?php require 'partials/header.html.php'; ?>
-    <h1>Hello <?= $name; ?> !</h1>
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-xl font-bold">Exemple MVC</h2>
+        <h3>Hello <?= $name; ?> !</h3>
 
-    <ul>
-        <?php foreach ($cars as $car) { ?>
-            <li><?= $car; ?></li>
-        <?php } ?>
-    </ul>
+        <ul>
+            <?php foreach ($cars as $car) { ?>
+                <li><?= $car; ?></li>
+            <?php } ?>
+        </ul>
 
-    <ul>
-        <?php foreach ($users as $user) { ?>
-            <li><?= $user['name']; ?></li>
-        <?php } ?>
-    </ul>
+        <h2 class="text-xl font-bold my-4">CRUD MVC</h2>
+        <div class="grid grid-cols-4 gap-3">
+            <?php foreach ($users as $user) { ?>
+                <div class="border p-4 rounded-lg shadow">
+                    <?= $user['name']; ?>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
 <?php require 'partials/footer.html.php'; ?>
