@@ -63,7 +63,7 @@ Les vues doivent être dans le dossier `views` et doivent se finir par `.html.ph
 <?php require 'partials/footer.html.php'; ?>
 ```
 
-### Créer un modèle
+### Créer un modèle
 
 Les modèles sont rangés dans `src/Model`. Un modèle sert à structurer les données contenues dans la base de données. Il contient du SQL et du PHP.
 
