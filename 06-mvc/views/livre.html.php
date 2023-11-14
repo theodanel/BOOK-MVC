@@ -1,5 +1,6 @@
 <?php
     require 'data.php';
+    require 'livres.html.php';
 
     // Récupérer l'id du livre sur livre.php?id=1
     $id = $_GET['id'] ?? null;

@@ -10,11 +10,11 @@ $app = new App();
 
 // Toutes les routes du site
 $app->addRoutes([
-    ['GET', '/', 'HomeController@index'],
+    ['GET', '/home', 'HomeController@index'],
     ['GET', '/utilisateurs', 'UserController@list'],
     ['GET', '/utilisateurs/[i:id]', 'UserController@show'],
     ['GET|POST', '/utilisateurs/creer', 'UserController@create'],
-    ['GET', '/films', 'MovieController@list'],
+
 ]);
 
 // Lancer l'application

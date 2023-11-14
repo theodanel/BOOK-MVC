@@ -1,6 +1,6 @@
 <?php require 'partials/header.html.php'; ?>
 
-<div class="max-w-5xl mx-auto">
+<div class="max-w-5xl mx-auto px-3">
     <h1 class="text-2xl">
         <?= $user['name']; ?>
     </h1>
