@@ -63,6 +63,22 @@ Les vues doivent être dans le dossier `views` et doivent se finir par `.html.ph
 <?php require 'partials/footer.html.php'; ?>
 ```
 
+La classe `View` va surtout servir à renvoyer une vue :
+
+```php
+// On affiche une vue home.html.php avec certaines variables
+return View::render('home', [
+    'name' => 'Fiorella',
+    'cars' => ['F1', 'Alpine', 'Porsche'],
+]);
+
+// On peut faire une redirection (NE FONCTIONNE PAS A FAIRE PENDANT LE TP)
+return View::redirect('/films');
+
+// On peut renvoyer une 404 (NE FONCTIONNE PAS A FAIRE PENDANT LE TP)
+return View::notFound();
+```
+
 ### Créer un modèle
 
 Les modèles sont rangés dans `src/Model`. Un modèle sert à structurer les données contenues dans la base de données. Il contient du SQL et du PHP.
