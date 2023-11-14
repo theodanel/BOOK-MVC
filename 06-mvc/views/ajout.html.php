@@ -1,6 +1,5 @@
 <?php 
-require 'C:\wamp64\www\php-recap\PHP OBJET poo\00-php fil rouge\00-recap\config\database.php';
-require 'C:\wamp64\www\php-recap\PHP OBJET poo\00-php fil rouge\00-recap\00-recap\data.php';
+
 
  require 'partials/header.html.php';
 

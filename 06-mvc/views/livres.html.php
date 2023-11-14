@@ -31,7 +31,7 @@ $title = 'Nos livres';
 
 <div class = " max-w-5xl mx-auto px-3">
         <div class="text-center mb-8">
-            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="ajout.php">
+            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="ajout/">
                 Créer un livre
             </a>
         </div>
@@ -81,7 +81,7 @@ $title = 'Nos livres';
             <div class="w-1/2 lg:w-1/4 mb-6">
                 <div class="shadow-lg rounded-lg h-full mx-3">
                     <div class="flex flex-col justify-between h-full">
-                        <a href="livre.html.php?id=<?= $book['id']; ?>">
+                        <a href="livre/<?=$book['id'];?>">
                             <img class="rounded-t-lg" src="<?= $book['image']; ?>" alt="<?= $book['title']; ?>">
                             <div class="p-4">
                                 <h2 class="text-center"><?= $book['title']; ?></h2>

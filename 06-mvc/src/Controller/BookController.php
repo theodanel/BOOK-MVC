@@ -20,7 +20,7 @@ class BookController
         public function show($id) 
         {
         
-            if ($books = Book::find($id)) {
+            if (!$books = Book::find($id)) {
                 http_response_code(404);
                 return View::render('404');
                }
@@ -30,33 +30,34 @@ class BookController
             'price' => $books['price'],
             'isbn' => $books['isbn'],
             'author' => $books['author'],
-            'publishedAt' => $books['published_at'],
+            'publishedAt' => $books['publishedAt'],
             'image' => $books['image'],
+            'discount' => $books['discount'],
          ]);
         }
 
         public function create()
         {
             // Récuper les données
-            $user = new Book();
-            $user->name = $_POST['name'] ?? null;
+            $book = new Book();
+            $book->name = $_POST['name'] ?? null;
             $errors = [];
 
             if(! empty($_POST)) {
-                if(empty($user->name)) {
+                if(empty($book->name)) {
                     $errors['name'] = 'Le nom est invalide.';
                 }
                 
                 if(empty($errors)) {
                     // Dans le save, on met le nom des colonnes de la table
-                    $user->save(['name']);
+                    $book->save(['name']);
                     // View : redirect ('.utilisateurs')
                 }
              
             }
             return View::render('create', [
                 'errors' => $errors,
-                'user' => $user,
+                'name' => $book,
             ]);
         }
 
@@ -73,6 +74,7 @@ public function delete(int $id) {
    header('Location: /livres' );
 
 }
+
 
 
 }
