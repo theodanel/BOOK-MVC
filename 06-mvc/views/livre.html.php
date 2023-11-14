@@ -1,6 +1,7 @@
 <?php
+require 'partials/header.html.php';
     require 'data.php';
-    require 'livres.html.php';
+
 
     // Récupérer l'id du livre sur livre.php?id=1
     $id = $_GET['id'] ?? null;
@@ -68,4 +69,4 @@
         </div>
     </div>
 
-<?php require 'partials/footer.php'; ?>
+<?php require 'partials/footer.html.php'; ?>
