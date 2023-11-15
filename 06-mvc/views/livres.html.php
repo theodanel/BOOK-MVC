@@ -15,7 +15,7 @@
 
     foreach ($books as $book) {
         // Quam toto => Toto
-        if (str_contains(strtolower($book['title']), strtolower($search)) ||
+        if (str_contains(strtolower($book['btitle']), strtolower($search)) ||
             str_contains(strtolower($book['author']), strtolower($search))) {
             $newBooks[] = $book;
             // array_push($newBooks, $book);
@@ -31,7 +31,7 @@ $title = 'Nos livres';
 
 <div class = " max-w-5xl mx-auto px-3">
         <div class="text-center mb-8">
-            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="ajout/">
+            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200" href="create">
                 Créer un livre
             </a>
         </div>
@@ -82,9 +82,9 @@ $title = 'Nos livres';
                 <div class="shadow-lg rounded-lg h-full mx-3">
                     <div class="flex flex-col justify-between h-full">
                         <a href="livre/<?=$book['id'];?>">
-                            <img class="rounded-t-lg" src="<?= $book['image']; ?>" alt="<?= $book['title']; ?>">
+                            <img class="rounded-t-lg" src="<?= $book['image']; ?>" alt="<?= $book['btitle']; ?>">
                             <div class="p-4">
-                                <h2 class="text-center"><?= $book['title']; ?></h2>
+                                <h2 class="text-center"><?= $book['btitle']; ?></h2>
                                 <div class="flex justify-around items-center">
                                     <p class="text-lg font-bold">
                                     <?= $book['price'] ?> ,<?= $book['discount']; ?> 
@@ -103,7 +103,7 @@ $title = 'Nos livres';
                         </a>
 
                         <div class="text-center">
-                            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200 mb-4" href="/book/1/edit">
+                            <a class="bg-gray-900 px-4 py-2 text-white inline-block rounded hover:bg-gray-700 duration-200 mb-4" href="/update">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                 </svg>

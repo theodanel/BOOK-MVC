@@ -52,4 +52,29 @@ class Model
 
         return $query->execute($values);
     }
+
+    public function update($fields) 
+    {
+    
+        $table = static::getTable();
+
+        $columns = implode(', ', $fields); // ['name', 'age'] => name, age
+        $values = [];
+
+        $parameters = implode(', ', array_keys($values)); // [':name', ':age']
+
+        $query = Database::get()->prepare( "UPDATE $table SET ($columns) = ($parameters) WHERE id = :id");
+    
+        $query->execute([
+            'btitle' => $btitle,
+            'price' => $price,
+            'isbn' => $isbn,
+            'author' => $author,
+            'publishedAt' => $publishedAt,
+            'image' => $image,
+            'discount' => $discount,
+            
+    ]);
+   
+    }
 }
